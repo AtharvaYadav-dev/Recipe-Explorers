@@ -43,7 +43,7 @@ class OfflineManager {
         }
       };
     });
-  });
+  }
 
   public async cacheRecipe(recipe: Recipe): Promise<void> {
     if (!this.db) await this.initDB();
