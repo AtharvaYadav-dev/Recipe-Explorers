@@ -17,6 +17,8 @@ class OfflineManager {
   private readonly DB_VERSION = 1;
   private readonly STORE_NAME = 'recipes';
 
+  private constructor() {}
+
   public static getInstance(): OfflineManager {
     if (!OfflineManager.instance) {
       OfflineManager.instance = new OfflineManager();
@@ -37,7 +39,7 @@ class OfflineManager {
       request.onupgradeneeded = (event) => {
         const db = (event.target as IDBOpenDBRequest).result;
         if (!db.objectStoreNames.contains(this.STORE_NAME)) {
-          db.createObjectStore(this.STORE_NAME, { keyPath: 'id' });
+          db.createObjectStore(this.STORE_NAME, { keyPath: "id" });
         }
       };
     });
