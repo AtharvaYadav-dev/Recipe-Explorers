@@ -1,6 +1,6 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
 import Layout from '@/components/Layout';
 import HomePage from '@/pages/HomePage';
 import SearchPage from '@/pages/SearchPage';
