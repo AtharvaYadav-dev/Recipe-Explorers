@@ -29,26 +29,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <motion.button
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
+        className={cn(baseStyles, variants[variant], sizes[size], disabled && 'opacity-50 cursor-not-allowed', className)}
         ref={ref}
         disabled={disabled || loading}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         {...props}
       >
-        {loading && (
-          <svg
-            className="animate-spin -ml-1 mr-2 h-4 w-4"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
+        {loading ? (
+          <div className="h-4 w-4 animate-spin rounded-full border-2 border-t-2 border-r-transparent border-b-transparent border-l-transparent border-current" />
+        ) : (
+          children
               strokeWidth="4"
             />
             <path

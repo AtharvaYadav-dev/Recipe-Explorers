@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   TrendingUp, Target, Flame, Scale, Heart, 
-  Calendar, Plus, BarChart3 
+  BarChart3 
 } from 'lucide-react';
-import { Recipe } from '@/types/recipe';
 import { useRecipeStore } from '@/store/recipeStore';
 import { cn } from '@/lib/utils';
 

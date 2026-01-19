@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FolderPlus, FolderOpen, Plus, X, Edit2, 
+  FolderPlus, FolderOpen, X, Edit2, 
   Trash2, Heart, Grid3x3 
 } from 'lucide-react';
 import { useRecipeStore } from '@/store/recipeStore';
-import { Recipe } from '@/types/recipe';
 import { cn } from '@/lib/utils';
 
 interface Collection {

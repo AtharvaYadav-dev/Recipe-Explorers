@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, BarChart3, Clock, Users, Flame, Scale } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { 
+  X, BarChart3, Clock, Users, Flame, Scale 
+} from 'lucide-react';
 import { Recipe } from '@/types/recipe';
 import { cn } from '@/lib/utils';
 
@@ -25,9 +27,7 @@ const RecipeComparison: React.FC<RecipeComparisonProps> = ({ recipes, onClose })
       case 'calories':
         return recipe.nutrition?.nutrients.find(n => n.name === 'Calories')?.amount || 0;
       case 'cost':
-        return recipe.extendedIngredients?.reduce((total, ing) => 
-          total + (ing.estimatedCost?.value || 0), 0
-        ) || 0;
+        return 0; // Cost calculation would need price data from API
       case 'healthScore':
         return recipe.healthScore || 0;
       case 'spoonacularScore':
